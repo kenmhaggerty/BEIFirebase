@@ -6,4 +6,15 @@ CREATED : Jun 07 2017
 EDITED  : Jun 07 2017
 */
 
-/* empty */
+ul {
+	list-style: none;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+td, th {
+	border: 1px solid #ddd;
+	padding: 8px;
+}
