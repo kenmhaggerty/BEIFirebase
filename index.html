@@ -10,21 +10,23 @@
   <meta name="msapplication-tap-highlight" content="no">
 
   <link rel="stylesheet" type="text/css" href="style.css">
-  
+
 </head>
 <body>
 
   <!-- PROTOTYPE FORM -->
 
-  <form id="myForm">
-    Username: <input type="text" name="UserName" placeholder="username"><br />
-    Product: <input type="text" name="ProductName" placeholder="product"><br />
-    Rating (1-5): <input type="number" name="ReviewRating" placeholder="rating"><br />
-    Reviews:<br />
-    <textarea name="ReviewText" form="myForm" placeholder="enter review here"></textarea><br />
-    Private: <input type="checkbox" name="PrivacySetting"><br />
-    <input type="submit" value="Submit">
-  </form>
-
+  <div id="review_ui">
+    <form id="myForm">
+      Username: <input type="text" name="UserName" placeholder="username"><br />
+      Product: <input type="text" name="ProductName" placeholder="product"><br />
+      Rating (1-5): <input type="number" name="ReviewRating" placeholder="rating"><br />
+      Reviews:<br />
+      <textarea name="ReviewText" form="myForm" placeholder="enter review here"></textarea><br />
+      Private: <input type="checkbox" name="PrivacySetting"><br />
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+  
 </body>
 </html>
