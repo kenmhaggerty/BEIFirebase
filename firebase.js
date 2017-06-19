@@ -4,11 +4,11 @@
 // CREATED : Jun 07 2017
 // EDITED  : Jun 07 2017
 
-function createReview(productName, rating, text, username, privacy) {
-	var path = 'products/' + productName;
+function createReview(product, rating, review, username, privacy) {
+	var path = 'products/' + product;
 	firebase.database().ref(path).push({
 		rating : rating,
-		text : text,
+		review : review,
 		username : username,
 		privacy : privacy
 	});
