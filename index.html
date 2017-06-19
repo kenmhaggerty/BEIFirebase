@@ -1,33 +1,42 @@
-<!doctype html>
 <!--
-  Copyright 2016 Google Inc. All rights reserved.
-  Licensed under the Apache License, Version 2.0 (the "License");
-  you may not use this file except in compliance with the License.
-  You may obtain a copy of the License at
-      https://www.apache.org/licenses/LICENSE-2.0
-  Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an "AS IS" BASIS,
-  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  See the License for the specific language governing permissions and
-  limitations under the License
+index.html
+BEIFirebase
+KEN M. HAGGERTY
+CREATED : Jun ?? 2017
+EDITED  : Jun 19 2017
 -->
+
+<!doctype html>
 <html lang="en">
-<head>
+<head><!--
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
   <title>Prototype Product Review UI</title>
-
-  <!-- Disable tap highlight on IE -->
-  <meta name="msapplication-tap-highlight" content="no">
-
   <link rel="stylesheet" type="text/css" href="style.css">
 
-  <!-- Firebase Imports -->
+  <!-- Disable tap highlight on IE ->
+  <meta name="msapplication-tap-highlight" content="no"> -->
+
+  <!-- Imports -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+  <!-- Firebase Setup -->
 
   <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase-database.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAJ-pzb-mkG_BWYb3ye7IiMYyToIHbwo1I",
+      authDomain: "beifirebase.firebaseapp.com",
+      databaseURL: "https://beifirebase.firebaseio.com",
+      projectId: "beifirebase",
+      storageBucket: "beifirebase.appspot.com",
+      messagingSenderId: "74014341653"
+    };
+    firebase.initializeApp(config);
+  </script>
 
 </head>
 <body>
@@ -42,33 +51,9 @@
       Review:<br />
       <textarea id="review" name="ReviewText" form="myForm" placeholder="enter review here"></textarea><br />
       Private: <input id="privacy" name="PrivacySetting" type="checkbox"><br />
-      <input type="submit" value="Submit">
+      <input id="submit" type="submit" value="Submit">
     </form>
   </div>
-
-  <!-- Import and configure the Firebase SDK -->
-  <!-- These scripts are made available when the app is served or deployed on Firebase Hosting -->
-  <!-- If you do not serve/host your project using Firebase Hosting see https://firebase.google.com/docs/web/setup -->
-
-  <!-- <script src="/__/firebase/3.9.0/firebase-app.js"></script>
-  <script src="/__/firebase/3.9.0/firebase-auth.js"></script>
-  <script src="/__/firebase/3.9.0/firebase-database.js"></script>
-  <script src="/__/firebase/init.js"></script> -->
-
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyAJ-pzb-mkG_BWYb3ye7IiMYyToIHbwo1I",
-      authDomain: "beifirebase.firebaseapp.com",
-      databaseURL: "https://beifirebase.firebaseio.com",
-      projectId: "beifirebase",
-      storageBucket: "beifirebase.appspot.com",
-      messagingSenderId: "74014341653"
-    };
-    firebase.initializeApp(config);
-  </script>
-
-  <script src="firebase.js"></script>
 
   <!-- IN-PAGE JAVASCRIPT -->
 
@@ -83,6 +68,10 @@
       createReview(product, rating, review, username, privacy);
     }
   </script>
+
+  <!-- EXTERNAL JAVASCRIPT -->
+
+  <script src="firebase.js"></script>
 
 </body>
 </html>
