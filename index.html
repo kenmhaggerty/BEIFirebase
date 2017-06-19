@@ -35,13 +35,13 @@
   <!-- PROTOTYPE FORM -->
 
   <div id="review_ui">
-    <form id="myForm">
-      Username: <input type="text" name="UserName" placeholder="username"><br />
-      Product: <input type="text" name="ProductName" placeholder="product"><br />
-      Rating (1-5): <input type="number" name="ReviewRating" placeholder="rating"><br />
-      Reviews:<br />
-      <textarea name="ReviewText" form="myForm" placeholder="enter review here"></textarea><br />
-      Private: <input type="checkbox" name="PrivacySetting"><br />
+    <form id="myForm" onSubmit="submitForm()">
+      Username: <input id="username" name="UserName" type="text" placeholder="username"><br />
+      Product: <input id="product" name="ProductName" type="text" placeholder="product"><br />
+      Rating (1-5): <input id="rating" name="ReviewRating" type="number" placeholder="rating"><br />
+      Review:<br />
+      <textarea id="review" name="ReviewText" form="myForm" placeholder="enter review here"></textarea><br />
+      Private: <input id="privacy" name="PrivacySetting" type="checkbox"><br />
       <input type="submit" value="Submit">
     </form>
   </div>
@@ -69,6 +69,20 @@
   </script>
 
   <script src="firebase.js"></script>
+
+  <!-- IN-PAGE JAVASCRIPT -->
+
+  <script>
+    function submitForm() {
+      var username = document.getElementById("username").value;
+      var product = document.getElementById("product").value;
+      var rating = document.getElementById("rating").value;
+      var review = document.getElementById("review").value;
+      var privacy = document.getElementById("privacy").checked;
+      
+      createReview(product, rating, review, username, privacy);
+    }
+  </script>
 
 </body>
 </html>
